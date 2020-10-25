@@ -1,0 +1,87 @@
+body{
+  background-color: #5B84B1FF;
+
+}
+.navbar-brand{
+  font-size: 40px;
+  padding-left: 40px;
+
+}
+
+.Projname{
+background-color: #101820FF;
+height: 100px;
+text-align: center;
+padding: 30px;
+color: #B1B3B3FF;
+font-size: 35px;
+font-weight: bold;
+}
+
+.phonecont img{
+  border-radius: 5%;
+  width: 20px;
+  height: 20px;
+}
+
+
+.box{
+  width: 80%;
+  height: 100%;
+  margin-left: 140px;
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+  border-bottom: solid 2px white;
+  border-top: solid 2px white;
+
+
+
+}
+
+.box img{
+  margin: 70px;
+  margin-left: 100px;
+  width:200px;
+  height:200px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px;
+
+}
+
+.box img:hover{
+    box-shadow: 3px 5px #666;
+    opacity: 0.7;
+
+}
+
+
+.box ul {
+
+
+
+}
+
+.box ul li{
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  color: white;
+
+
+
+}
+
+.box ul li h4{
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: -50px;
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+.btn-group{
+  margin-left: 80.7%;
+  margin-top: 0.2%;
+}

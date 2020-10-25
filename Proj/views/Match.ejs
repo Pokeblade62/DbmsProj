@@ -1,0 +1,232 @@
+<html>
+ <head>
+    <title>Manage Tournaments</title>
+    <link rel="stylesheet" href="/otherStyles.css">
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      border-style: double;
+      margin-left: 15.5%;
+        width: 60%;
+      background-color: #83e377;
+      font-size: 1.2em;
+    }
+    td, th {
+      border: 3px solid #c5c6c7;
+      padding: 4px;
+      text-align: center;
+    }
+    tr:nth-child(even) {
+      color: #5F4B8BFF;
+      background-color: #b9e769;
+    }
+    </style>
+  </head>
+  <nav class="vertical-menu-wrapper">
+    <div class="vertical-menu-logo">
+      <div>Team 39</div>
+      <span class="open-menu-btn"><hr><hr><hr></span>
+    </div>
+    <body>
+    <ul class="vertical-menu">
+      <a href="/"><li>Main Page</li></a>
+        <hr/>
+        <a href="/Teams"><li>Teams</li></a>
+        <hr/>
+      <a href="/Player"><li>Players</li></a>
+      <hr/>
+      <a href="/Manager"><li>Managers</li></a>
+        <hr/>
+      <a href="/Coach"><li>Coach</li></a>
+        <hr/>
+        <a href="/Tournament"><li>Tournaments</li></a>
+        <hr/>
+        <a href="/Match"><li>Match</li></a>
+        <hr/>
+        <a href="/MatchDet"><li>Edit Match Details</li></a>
+        <hr/>
+        <a href="/Stadium"><li>Stadiums</li></a>
+        <hr/>
+        <a href="/Contact"><li>Contact Information</li></a>
+    </ul>
+  </nav>
+  <div class="content-wrapper">
+    <div class="content">
+
+        <h2>Match</h2>
+      <div class="Inner">
+        <br>
+        <br>
+        <br>
+      <div class="Manupulation">
+        <ul class="buttonn">
+      <li> <a href="#ex1" rel="modal:open"><button type="button" name="button" id="add">Add</button></a></li>
+      <li><a href="#ex3" rel="modal:open"><button type="button" name="button" id="update">Update</button></a> </li>
+      <li><a href="#ex4" rel="modal:open"><button type="button" name="button" id="delete">Delete</button></a></li>
+      <li><a href="#ex5" rel="modal:open"><button type="button" name="button" id="search">Search</button></a></li>
+
+    </ul>
+
+    <ul>
+      <li> <div class="Addition" id="add1">
+        <div id="ex1" class="modal">
+          <form class="add" action="/Match" method="post">
+          <input type="text" placeholder="Home Team" name="hometeam">
+          <input type="text" placeholder="Away Team" name="awayteam">
+          <input type="text" placeholder="Tournamentid" name="tournamentid">
+          <input type="text" placeholder="date" name="date">
+          <br>
+          <button class="btn" type="submit" name="button">Insert</button>
+          </form>
+          </div>
+         </div></li>
+      <li><div class="Updation" id="update1">
+        <div id="ex3" class="modal">
+        <form class="update" action="/Match" method="post">
+          <input type="text" placeholder="ID" name="idU">
+        <input type="text" placeholder="Home Team" name="hometeamU">
+        <input type="text" placeholder="Away Team" name="awayteamU">
+        <input type="text" placeholder="Tournamentid" name="tournamentidU">
+        <input type="text" placeholder="date" name="dateU">
+        <br>
+        <button class="btn" type="submit" name="button">Update</button>
+        </form>
+        </div>
+      </div> </li>
+      <li><div class="Deletion" id="delete1">
+        <div id="ex4" class="modal">
+        <form class="delete" action="/Match" method="post">
+        <input type="text" placeholder="Enter id" name="idD">
+        <br>
+        <button class="btn" type="submit" name="button">Delete</button>
+        </form>
+        </div>
+      </div> </li>
+      <li><div class="Search" id="search1">
+        <div id="ex5" class="modal">
+        <form class="delete" action="/Match" method="post">
+        <input type="text" placeholder="Enter id" name="idS">
+        <br>
+        <button class="btn" type="submit" name="button">Search</button>
+        </form>
+        </div>
+      </div> </li>
+
+    </ul>
+    </div>
+<br>
+<br>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Home Team Id</th>
+        <th>Away Team Id</th>
+        <th>Tournament id</th>
+        <th>Date</th>
+      </tr>
+
+      <% for(var i=0;i<Allo.length;i++){ %>
+              <tr>
+
+               <td><%=Allo[i].id%></td>
+               <td><%=Allo[i].homeTeam%></td>
+               <td><%=Allo[i].awayTeam%></td>
+               <td><%=Allo[i].tournamentId%></td>
+               <td><%=Allo[i].date.getFullYear();%>  / <%=Allo[i].date.getMonth()+1;%> / <%=Allo[i].date.getDate();%>%></td>
+              </tr>
+      <% }%>
+
+    </div>
+</div>
+</div>
+
+</body>
+    </table>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<div class="alert alert-success" role="alert" id="loginAlert">
+    <p style="text-align: center; color:white;">No Tournament With That id</p>
+</div>
+<script>
+    $('#loginAlert').hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('error');
+    if(myParam == "No_Tournament_With_that_id") {
+        $('#loginAlert').show();
+    }
+</script>
+
+<div class="alert alert-success" role="alert" id="AddAlert">
+    <p style="text-align: center; color:white;">Not in range of tournament duration</p>
+</div>
+
+<script>
+    $('#AddAlert').hide();
+    const urlParams2 = new URLSearchParams(window.location.search);
+    const myParam2 = urlParams2.get('errorFK');
+    if(myParam2 == "out_of_range") {
+        $('#AddAlert').show();
+    }
+</script>
+<div class="alert alert-success" role="alert" id="errAlert">
+    <p style="text-align: center; color:white;">No team with that ID</p>
+</div>
+
+<script>
+    $('#errAlert').hide();
+    const urlParams3 = new URLSearchParams(window.location.search);
+    const myParam3 = urlParams3.get('error1');
+    if(myParam3 == "no_team_with_that_id") {
+        $('#errAlert').show();
+    }
+</script>
+<script>
+$("#add").click(function(){
+  $("#add1").show();
+  $('#update1').hide();
+  $('#delete1').hide();
+  $('#search1').hide();
+});
+$("#update").click(function(){
+  $("#update1").show();
+  $('#delete1').hide();
+  $('#search1').hide();
+  $('#add1').hide();
+});
+$("#delete").click(function(){
+  $("#delete1").show();
+  $('#add1').hide();
+  $('#update1').hide();
+  $('#search1').hide();
+});
+$("#search").click(function(){
+  $("#search1").show();
+  $('#add1').hide();
+  $('#update1').hide();
+  $('#delete1').hide();
+});
+</script>
+<script>
+$('.open-menu-btn').on('click', function(){
+  if($('body').hasClass('closed-menu')){
+    $('body').removeClass('closed-menu');
+  }else  $('body').addClass('closed-menu');
+});
+</script>
+<script>
+$('#add1').hide();
+$('#update1').hide();
+$('#delete1').hide();
+$('#search1').hide();
+</script>
+
+</html>
